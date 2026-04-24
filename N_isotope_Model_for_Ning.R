@@ -1,10 +1,10 @@
 #################################################################N istope model
 pop.mod2 <-nls(d15N.14N~ c+a/(1+b*(fR/fTemp)),start=list(a =7.04, b =2.68,c=-2.47), data=nitrogendata, trace=T)
 summary(pop.mod2) 
-###This model you can get the value of k and εgas, and the values that I said you on Wechat
+###This model you can get the value of k and εgas
 nitrogenisotope_model<--7.6265 +(10.4682/(1+1.1405*(fR/fTemp)))
 fgas<-1/(1+1.1405*(fR/fTemp)) 
-#####################################plot figure
+#####################################
 fgasdata<-data.frame(cbind(fgas,ndata$MAP))
 fgas.sd<-aggregate(fgasdata$fgas,by=list(fgasdata$V2),FUN=sd)
 fgas_mean<-aggregate(fgasdata$fgas,by=list(fgasdata$V2),FUN=mean)
